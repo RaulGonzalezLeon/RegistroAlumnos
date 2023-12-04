@@ -15,11 +15,10 @@ import kotlinx.coroutines.launch
 
 class DeleteActivity : ActivityWithMenus() {
 
-    private lateinit var binding : DeleteActivity
-    private lateinit var listaAlumnos: MutableList<dataAlumno>
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var binding : ActivityDeleteBinding
+    override fun onCreate(savedInstanceState: android.os.Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityDeleteBinding.inflate(layoutInflater)
+        binding = ActivityDeleteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.botonEliminar.setOnClickListener(){

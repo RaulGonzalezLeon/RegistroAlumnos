@@ -20,12 +20,14 @@ class MainActivity : ActivityWithMenus() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         listaAlumnos = ArrayList()
 
         binding.bAnadir.setOnClickListener{
+
+
 
 
                 // Creamos el alumno
@@ -48,7 +50,6 @@ class MainActivity : ActivityWithMenus() {
         }
     }
     fun anadirAlumno(alumno: dataAlumno) {
-
         CoroutineScope(Dispatchers.IO).launch {
             database.alumnoDAO().addAlumno(alumno)
         }
