@@ -13,11 +13,11 @@ interface alumnoDAO {
 
 
     @Query("SELECT * FROM alumnos WHERE nombre LIKE :nombre")
-    fun obteneralumnopornombre(nombre:String): dataAlumno
+    fun obteneralumnopornombre(nombre:String): MutableList<dataAlumno>
 
     @Update
-    fun updateLista(alumno: dataAlumno): Int
+    fun updateLista(alumno: dataAlumno)
 
     @Delete
-    fun deleteLista(alumno: dataAlumno): Int
+    fun deleteLista(alumno: dataAlumno)
 }
